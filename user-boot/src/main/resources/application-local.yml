@@ -1,0 +1,48 @@
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  jackson:
+    default-property-inclusion: non_null
+    deserialization:
+      fail-on-unknown-properties: false
+  mvc:
+    pathmatch:
+      matching-strategy: ant-path-matcher
+  datasource:
+    url: jdbc:h2:mem:nisum
+    driverClassName: org.h2.Driver
+    username: sa
+    password: password
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: UTC
+        show_sql: true
+        format_sql: true
+  h2:
+    console:
+      enabled: true
+      path: /h2
+  sql:
+    init:
+      platform: h2
+      mode: embedded
+      schema-locations: classpath:doc/sqlSchema.sql
+      separator: $$$
+
+security:
+  basic:
+    user: admin
+    #password is thisismypassword
+    password: $2a$10$z.OhUnC5o0vk/36BxsK77u1wJLQ4oPdj2NtkfGMF7GViDwAZgWpTu
+  password-pattern: "^[a-zA-Z0-9]*$"
+
+encryption:
+  aes: 47,91,36,95,61,49,59,63,105,108,112,45,37,58,64,42
+
+
