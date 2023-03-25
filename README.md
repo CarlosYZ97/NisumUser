@@ -31,3 +31,8 @@
  
   Para validar la api rest de creación deberá ingresar al siguiente link 
   - http://localhost:8080/swagger-ui/index.html
+
+
+### Diagrama de Solución
+  
+  [![Nisum-Reto-drawio.png](https://i.postimg.cc/MHYkqTP2/Nisum-Reto-drawio.png)](https://postimg.cc/Cndr4Fpm)
