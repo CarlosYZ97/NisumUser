@@ -4,13 +4,11 @@ import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 import pe.nisum.app.user.domain.model.User;
 import pe.nisum.app.user.domain.model.UserInput;
-import pe.nisum.app.user.infraestructure.dao.entity.PhoneEntity;
 import pe.nisum.app.user.infraestructure.dao.entity.UserEntity;
 
 import java.time.LocalDateTime;
 import java.util.Objects;
 import java.util.UUID;
-import java.util.stream.Collectors;
 
 @Mapper
 public interface UserMapper {
@@ -22,6 +20,7 @@ public interface UserMapper {
 			.id(userEntity.getId().toString())
 			.created(userEntity.getCreated())
 			.isActive(userEntity.getIsActive())
+			.modified(userEntity.getModified())
 			.lastLogin(Objects.nonNull(userEntity.getLastLogin()) ? userEntity.getLastLogin() : userEntity.getCreated())
 			.token(userEntity.getToken())
 			.build();
@@ -35,6 +34,7 @@ public interface UserMapper {
 		userEntity.setName(userInput.getName());
 		userEntity.setPassword(userInput.getPassword());
 		userEntity.setCreated(LocalDateTime.now());
+		userEntity.setModified(LocalDateTime.now());
 		userEntity.setToken(userInput.getToken());
 		userEntity.setIsActive(Boolean.TRUE);
 
