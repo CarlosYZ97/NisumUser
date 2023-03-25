@@ -23,7 +23,7 @@ public interface UserMapper {
 			.created(userEntity.getCreated())
 			.isActive(userEntity.getIsActive())
 			.lastLogin(Objects.nonNull(userEntity.getLastLogin()) ? userEntity.getLastLogin() : userEntity.getCreated())
-			.token(userEntity.getId().toString())
+			.token(userEntity.getToken())
 			.build();
 	}
 
@@ -34,14 +34,8 @@ public interface UserMapper {
 		userEntity.setEmail(userInput.getEmail());
 		userEntity.setName(userInput.getName());
 		userEntity.setPassword(userInput.getPassword());
-		/*userEntity.setPhones(userInput.getPhones().stream().map(phone -> {
-			PhoneEntity phoneEntity = new PhoneEntity();
-			phoneEntity.setNumber(phone.getNumber());
-			phoneEntity.setCityCode(phone.getCityCode());
-			phoneEntity.setCountryCode(phone.getCountryCode());
-			return phoneEntity;
-		}).collect(Collectors.toList()));*/
 		userEntity.setCreated(LocalDateTime.now());
+		userEntity.setToken(userInput.getToken());
 		userEntity.setIsActive(Boolean.TRUE);
 
 		return userEntity;

@@ -41,8 +41,8 @@ security:
     #password is thisismypassword
     password: $2a$10$z.OhUnC5o0vk/36BxsK77u1wJLQ4oPdj2NtkfGMF7GViDwAZgWpTu
   password-pattern: "^[a-zA-Z0-9]*$"
+  jwt:
+    base64-secret: ZWI0YzMwMmUzODE2ZDFlNGIxZDUwZDdkZDI0NTY5ZDlmMWI4YTEwNzIxMWEzOTExM2E1ZmQ1YzE3Yzg5MmM3YzY4YTgwODEzZTMxOTEyZDE3OWU0YTQzZTQyZjJkNjI1MmMxYmI3MzQyY2Q4MGM3NWEyMzc0YzI1MmVjZTljZjk=
 
 encryption:
   aes: 47,91,36,95,61,49,59,63,105,108,112,45,37,58,64,42
-
-

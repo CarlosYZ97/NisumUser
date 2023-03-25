@@ -12,6 +12,7 @@ public class UserInput {
 	private String name;
 	private String email;
 	private String password;
+	private String token;
 	private List<Phone> phones;
 
 	@Data

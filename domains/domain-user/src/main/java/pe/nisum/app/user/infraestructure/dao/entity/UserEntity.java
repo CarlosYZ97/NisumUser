@@ -48,6 +48,9 @@ public class UserEntity {
 	@Column(name = "LAST_LOGIN")
 	private LocalDateTime lastLogin;
 
+	@Column(name = "TOKEN")
+	private String token;
+
 	@Column(name = "IS_ACTIVE")
 	private Boolean isActive;
 

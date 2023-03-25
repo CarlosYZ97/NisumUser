@@ -19,8 +19,10 @@ public class UserApplicationServiceImpl implements UserApplicationService {
 
 	@Override
 	public UserResponseDto createUser(UserRequestDto userRequestDto) {
+
 		User user = userService.createUser(UserMapper.INSTANCE.mapUserInput(
 			userRequestDto));
+
 		return UserMapper.INSTANCE.mapUserResponse(user);
 	}
 
